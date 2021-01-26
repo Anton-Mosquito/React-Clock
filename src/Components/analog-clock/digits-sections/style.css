@@ -1,0 +1,39 @@
+.digits__wrapper{
+    position: relative;
+    margin : 0 5px;
+    -webkit-box-reflect: below 2px linear-gradient(transparent, rgba(2, 2, 2, 0.933));
+}
+
+.digits__section{
+    position: relative;
+    display: block;
+    width: 70px;
+    height: 40px;
+    background:#0037DB;
+    color: #FFF;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    z-index: 10;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .2);
+}
+
+.digits__section:nth-child(2){
+    height: 30px;
+    font-size: .7rem;
+    font-weight: 500;
+    z-index: 9;
+    box-shadow: none;
+    background: #00E528;
+    text-transform: uppercase;
+}
+
+.digits__wrapper:last-child .digits__section{
+    background: #00248E;
+}
+
+.digits__wrapper:last-child .digits__section:nth-child(2){
+    background: #00951A;
+}

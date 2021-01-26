@@ -3,6 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import WebFont from "webfontloader";
+
+WebFont.load({
+  google: {
+    families: ["Orbitron:400;500;700"],
+  },
+});
 
 ReactDOM.render(
   <React.StrictMode>

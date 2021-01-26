@@ -1,0 +1,39 @@
+.header {
+    text-align: center;
+    font-size: 5rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 0 0 20px #fff;
+    position: relative;
+}
+
+.header::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    color: #fff;
+    z-index: -1;
+    -webkit-filter: blur(15px);
+            filter: blur(15px);
+        }
+  
+.header::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: -2;
+    opacity: 0.5;
+    -webkit-filter: blur(40px);
+            filter: blur(40px);
+  }
+  

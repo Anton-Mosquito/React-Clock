@@ -1,0 +1,55 @@
+.radioChose {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.radioChose label {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.radioChose label input {
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    position: relative;
+    top: 27px;
+    left: -67px;
+    z-index: 10;
+}
+
+.radioChose label input:focus {
+    outline: none;
+}
+
+.radioChose label svg {
+    padding: 2.5px;
+    position: relative;
+    top: 5px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    color: #6f6f6f;
+    margin: 0 4px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1), 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.radioChose label svg:hover {
+    color: rgb(0, 6, 157);
+    box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1), 2px 2px 6px rgba(0, 0, 0, 0.8), inset -2px -2px 10px rgba(255, 255, 255, 0.05), inset 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.radioChose label input:checked~svg {
+    color: rgb(0, 6, 157);
+    box-shadow: inset -1px -1px 3px rgba(255, 255, 255, 0.1), inset 2px 2px 6px rgba(0, 0, 0, 1);
+    text-shadow: 0 0 5px rgb(0, 6, 157), 0 0 20px rgb(0, 6, 157);
+}
+

@@ -1,0 +1,34 @@
+.date__time-wrapper-drop{
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 200;
+}
+
+.date__time-wrapper-drop .towns{
+    padding: 0 0 0 1rem;
+    height: 30px;
+    width: 200px;
+    background-color: #663399;
+    color: #fff;
+    border: 0;
+    outline: none;
+    font-size: 1.5rem;
+    appearance: none;
+    cursor: pointer;
+    box-shadow: 0 5px 30px rgba(227, 216, 63, .5);
+  } 
+  
+.date__time-wrapper-drop::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 12.5px 0 12.5px;
+    border-color: #E3D83F transparent transparent transparent;
+    top: 20%;
+    left: 80%;
+    pointer-events: none;
+  }
