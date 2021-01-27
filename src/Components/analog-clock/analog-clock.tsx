@@ -8,18 +8,14 @@ import Context from '../../context';
 import moment from 'moment';
 
 let format : string = 'HH';
-let offset : number = 0;
+let zone: string = 'Europe/Kiev';
 
 
 
 export default function ClockAnalog() {
-  const timeNormilize = (digits :number) => {
-    return digits < 10 ? '0' + Math.abs(digits) : '' + Math.abs(digits);
-  };
-
-  let hours = timeNormilize(Number(moment(new Date()).format(format)) - offset);
-  let minutes = timeNormilize(Number(moment(new Date()).format('mm')));
-  let seconds = timeNormilize(Number(moment(new Date()).format('ss')));
+  const hours = moment.tz(zone).format(format);
+  const minutes = moment.tz(zone).format('mm');
+  const seconds = moment.tz(zone).format('ss');
   
   
   const [ time , setTime ] = useState<IAnalogTime[]>([
@@ -53,14 +49,10 @@ export default function ClockAnalog() {
         };
     }
 
-    const changeZoneTime = (value : string) => {
-      const now = moment().valueOf();
-      const nowZone = moment.tz.zone('Europe/Kiev')?.utcOffset(now)!;
-      const offsetMinutes = moment.tz.zone(value)?.utcOffset(now)!;
-      offset = (offsetMinutes - nowZone) / 60;
+    const changeZoneTime = (value : string) => { 
+      zone = value;
     }
 
-    
     return (
       <Context.Provider value={{changeTime : changeTime, changeZoneTime : changeZoneTime}}>
         <div className='date__time-wrapper'>
