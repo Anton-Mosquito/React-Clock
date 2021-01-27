@@ -25,7 +25,7 @@ export default function RadioChoise() {
 
     return (
         <form action="" className="radioChose">
-            {radio.map(( params:any) => {
+            {radio.map(( params ) => {
                 return <Inputs key={params.id} {...params} onChange={change}/>
                 })}
       </form>

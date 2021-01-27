@@ -20,7 +20,7 @@ export default function DropDown() {
     return (
         <p className="date__time-wrapper-drop">
             <select className="towns" onChange={changeZone}>
-                {zone.map((params:any ,index:number)=> <OprionForDropDown key={index} zone={params}/>)}
+                {zone.map((params: string ,index: number)=> <OprionForDropDown key={index} zone={params}/>)}
             </select>
         </p>
     )
