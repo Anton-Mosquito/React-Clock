@@ -11,4 +11,4 @@ export default function DigitsSection ({value, name} : IDigitsProps) {
             <span className='digits__section'>{name}</span>
         </div>
     );
-  }
+}
