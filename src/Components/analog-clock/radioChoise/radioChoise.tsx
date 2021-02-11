@@ -1,12 +1,12 @@
 import React, { useContext, useState } from 'react';
 import './style.css';
-import Inputs from './inputs/input';
+import {Inputs} from './inputs/input';
 import Context from '../../../context';
 import ChangeContext from '../../../Models/contextType';
 
 
 
-export default function RadioChoise() {
+export const RadioChoise: React.FC = () => {
     const {changeTime} = useContext<ChangeContext>(Context);
 
     const [ radio , setRadio ] = useState([
@@ -28,6 +28,6 @@ export default function RadioChoise() {
             {radio.map(( params ) => {
                 return <Inputs key={params.id} {...params} onChange={change}/>
                 })}
-      </form>
+        </form>
     )
 }

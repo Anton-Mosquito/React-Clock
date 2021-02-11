@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Header from './Components/header/header'
+import { Header } from './Components/header/header'
 import { ClockAnalog } from "./Components/analog-clock/analog-clock";
 import { ClockDigital } from "./Components/digital-clock/digital-clock";
 

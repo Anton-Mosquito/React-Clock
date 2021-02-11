@@ -1,7 +1,7 @@
 import React from 'react';
 import { IDigitalArrow } from "../../../Models/digitalTime";
 
-export default function Arrow ({nameMain , nameSecondary, value}: IDigitalArrow) {    
+export const Arrow: React.FC<IDigitalArrow> = ({nameMain , nameSecondary, value}) => {    
     
     const rotate = `rotateZ(${value}deg)`;
 

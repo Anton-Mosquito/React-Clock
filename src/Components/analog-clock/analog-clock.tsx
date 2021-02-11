@@ -1,26 +1,27 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './styles.css';
-import DigitsSection from './digits-sections/digits';
-import DropDown from "./dropDown/dropDown";
-import {IAnalogTime} from '../../Models/analogTime';
-import RadioChoise from './radioChoise/radioChoise';
+import { DigitsSection } from './digits-sections/digits';
+import { DropDown } from "./dropDown/dropDown";
+import { IAnalogTime } from '../../Models/analogTime';
+import { RadioChoise } from './radioChoise/radioChoise';
 import Context from '../../context';
 import moment from 'moment';
 
-let format : string = 'HH';
-let zone: string = 'Europe/Kiev';
 
 export const ClockAnalog: React.FC = () => {
-  const hours = moment.tz(zone).format(format);
-  const minutes = moment.tz(zone).format('mm');
-  const seconds = moment.tz(zone).format('ss');
+  const format = useRef<string>('HH');
+  const zone = useRef<string>('Europe/Kiev');
+
+  const hours = moment.tz(zone.current).format(format.current);
+  const minutes = moment.tz(zone.current).format('mm');
+  const seconds = moment.tz(zone.current).format('ss');
   
   const [ time , setTime ] = useState<IAnalogTime[]>([
         {id : 1, value : hours, name : 'Hours' },
         {id : 2, value : minutes, name : 'Minutes' },
         {id : 3, value : seconds, name : 'Seconds' },
       ]);
-      
+   
   useEffect(() => {
     const timerID = setInterval( () => tick(), 1000 );
     
@@ -39,15 +40,15 @@ export const ClockAnalog: React.FC = () => {
   
   const changeTime = (value :string) :void => {
     if (value === '12'){
-      format = 'hh';
+      format.current = 'hh';
     };
     if (value === '24'){
-      format = 'HH';
+      format.current = 'HH';
     };
   };
   
   const changeZoneTime = (value : string) :void => { 
-    zone = value;
+    zone.current = value;
   };
   
   return (

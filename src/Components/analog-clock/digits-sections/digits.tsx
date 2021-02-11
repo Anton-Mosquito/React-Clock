@@ -4,7 +4,7 @@ import {IDigitsProps} from '../../../Models/analogTime';
 
 
 
-export default function DigitsSection ({value, name} : IDigitsProps) {
+export const DigitsSection: React.FC<IDigitsProps> =  ({value, name}) =>{
     return (
         <div className='digits__wrapper'>
             <span className='digits__section'>{value}</span>

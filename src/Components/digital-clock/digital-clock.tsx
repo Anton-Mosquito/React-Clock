@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {IDigitalTime} from '../../Models/digitalTime';
-import Arrow from './arrow/arrow';
+import { Arrow } from './arrow/arrow';
 import './styles.css';
 
 

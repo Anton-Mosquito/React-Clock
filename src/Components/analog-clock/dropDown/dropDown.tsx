@@ -1,11 +1,11 @@
 import React, { ChangeEvent, useContext } from 'react';
 import './style.css';
-import OprionForDropDown from "./options/option";
+import { OprionForDropDown } from "./options/option";
 import Context from '../../../context';
 import ChangeContext from '../../../Models/contextType';
 import momentTZ from 'moment-timezone';
 
-export default function DropDown() {
+export const DropDown: React.FC = () => {
     
     const {changeZoneTime} = useContext<ChangeContext>(Context);
     

@@ -3,7 +3,7 @@ import sprite from "../../../../assets/sprite.svg";
 import { IInputProps } from "../../../../Models/analogTime";
 
 
-export default function Inputs( { forLabel, forId, name, text, id, check, onChange} : IInputProps) {
+export const Inputs: React.FC<IInputProps> = ({ forLabel, forId, name, text, id, check, onChange}) => {
     return (  
     <label htmlFor={forLabel}>
         {text}
