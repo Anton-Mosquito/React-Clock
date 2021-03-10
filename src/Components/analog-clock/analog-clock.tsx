@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import './styles.css';
 import { DigitsSection } from './digits-sections/digits';
 import { DropDown } from "./dropDown/dropDown";
@@ -21,7 +21,8 @@ export const ClockAnalog: React.FC = () => {
         {id : 2, value : minutes, name : 'Minutes' },
         {id : 3, value : seconds, name : 'Seconds' },
       ]);
-   
+
+
   useEffect(() => {
     const timerID = setInterval( () => tick(), 1000 );
     
@@ -30,26 +31,26 @@ export const ClockAnalog: React.FC = () => {
     };
   });
   
-  const tick = () => {      
+  const tick = useCallback(() => {      
     setTime([
       {id : 1, value : hours, name : 'Hours' },
       {id : 2, value : minutes, name : 'Minutes' },
       {id : 3, value : seconds, name : 'Seconds' },
     ]);
-  };
+  },[hours, minutes, seconds]);
   
-  const changeTime = (value :string) :void => {
+  const changeTime = useCallback((value :string) :void => {
     if (value === '12'){
       format.current = 'hh';
     };
     if (value === '24'){
       format.current = 'HH';
     };
-  };
+  },[]);
   
-  const changeZoneTime = (value : string) :void => { 
+  const changeZoneTime = useCallback((value : string) :void => { 
     zone.current = value;
-  };
+  }, []);
   
   return (
   <Context.Provider value={{changeTime : changeTime, changeZoneTime : changeZoneTime}}>

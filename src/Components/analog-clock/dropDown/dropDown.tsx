@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useContext } from 'react';
+import React, { ChangeEvent, useCallback, useContext } from 'react';
 import './style.css';
 import { OprionForDropDown } from "./options/option";
 import Context from '../../../context';
@@ -11,11 +11,11 @@ export const DropDown: React.FC = () => {
     
     const zone = momentTZ.tz.names();
 
-    const changeZone = (event: ChangeEvent<HTMLSelectElement>) =>{
+    const changeZone = useCallback((event: ChangeEvent<HTMLSelectElement>) =>{
         const select = event.target.selectedIndex;
         const options = event.target.options;
         changeZoneTime(options[select].value)
-    }
+    },[changeZoneTime]);
 
     return (
         <p className="date__time-wrapper-drop">
